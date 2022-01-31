@@ -1,0 +1,14 @@
+name: Actions
+
+on: [push]
+
+jobs:
+  build:
+    name: Performing scanning
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Running sonarscan
+        run: sonar-scanner -Dsonar.projectKey=Testing -Dsonar.sources=. -Dsonar.host.url=http://35.153.93.168:9000 -Dsonar.login=ad1662780d3ef0b8199415cf5787a20768489a90
