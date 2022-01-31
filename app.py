@@ -15,7 +15,7 @@ for keys in vpc['Vpcs']:
 
 #print(vpc)
 nums = client.describe_instances()
-mantags = ["Env","CostCenter","Email","Name"]
+mantags = ["Env","CostCenter","Emails","Name"]
 for items in nums['Reservations']:
         for holes in items['Instances']:
             for mytags in holes['Tags']:
